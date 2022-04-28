@@ -22,5 +22,5 @@ docker run \
 	--restart always \
 	--env PLUGIN_DIR='/var/jenkins_home/plugins' \
 	--env JAVA_OPTS='-Djenkins.install.runSetupWizard=false' \
-	jenkins/jenkins:latest
+	pafable/cont-jenkins:v1
 ```
