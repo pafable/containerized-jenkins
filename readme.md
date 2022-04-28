@@ -15,6 +15,6 @@ docker run \
 	--volume jenkins-controller:/var/jenkins_home \
 	--restart always \
 	--env PLUGIN_DIR='/var/jenkins_home/plugins' \
-    --env JAVA_OPTS='-Djenkins.install.runSetupWizard=false' \
-    jenkins/jenkins:latest
+        --env JAVA_OPTS='-Djenkins.install.runSetupWizard=false' \
+    	jenkins/jenkins:latest
 ```
