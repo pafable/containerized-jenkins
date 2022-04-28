@@ -2,4 +2,5 @@ ansicolor:1.0.1
 blueocean:1.25.3
 configuration-as-code:1429.v09b_044a_c93de
 kubernetes:1.31.3
+role-strategy:3.2.0
 terraform:1.0.10
