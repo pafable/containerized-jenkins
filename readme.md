@@ -9,6 +9,7 @@ The objective of this is to test the viability of running Jenkins in a container
 docker build -t <username>/cont-jenkins:<version>
 ```
 
+*Run*
 ```
 docker run \
 	--name jenkins-controller \
