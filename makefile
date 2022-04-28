@@ -22,5 +22,5 @@ run:
 		--volume jenkins-controller:/var/jenkins_home \
 		--restart always \
 		--env PLUGIN_DIR='/var/jenkins_home/plugins' \
-		--env JAVA_OPTS='-Djenkins.install.runSetupWizard=false' \
+		--env JAVA_OPTS='-Djenkins.install.runSetupWizard=false -Djava.awt.headless=true' \
 		pafable/cont-jenkins:v1 
