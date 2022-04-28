@@ -2,6 +2,13 @@ jenkins:
   agentProtocols:
   - "JNLP4-connect"
   - "Ping"
+  authorizationStrategy:
+    globalMatrix:
+      permissions:
+      - "GROUP:Job/Read:authenticated"
+      - "GROUP:Metrics/View:authenticated"
+      - "GROUP:View/Read:authenticated"
+      - "USER:Overall/Administer:pafable"
   crumbIssuer:
     standard:
       excludeClientIPFromCrumb: false
@@ -20,6 +27,24 @@ jenkins:
   remotingSecurity:
     enabled: true
   scmCheckoutRetryCount: 0
+  securityRealm:
+    local:
+      allowsSignup: false
+      enableCaptcha: false
+      users:
+      - id: "pafable"
+        name: "phil"
+        properties:
+        - "apiToken"
+        - favoriting:
+            autofavoriteEnabled: true
+        - "favorite"
+        - "myView"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+        - mailer:
+            emailAddress: "phill123@test-example.com"
   slaveAgentPort: 50000
   systemMessage: |+
     Jenkins configured automatically by Jenkins Configuration as Code plugin
