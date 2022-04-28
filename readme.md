@@ -3,7 +3,12 @@
 ## Introduction
 The objective of this is to test the viability of running Jenkins in a container
 
-## Docker Command
+## Docker Commands
+*Build*
+```
+docker build -t <username>/cont-jenkins:<version>
+```
+
 ```
 docker run \
 	--name jenkins-controller \
@@ -15,6 +20,6 @@ docker run \
 	--volume jenkins-controller:/var/jenkins_home \
 	--restart always \
 	--env PLUGIN_DIR='/var/jenkins_home/plugins' \
-    --env JAVA_OPTS='-Djenkins.install.runSetupWizard=false' \
-    jenkins/jenkins:latest
+	--env JAVA_OPTS='-Djenkins.install.runSetupWizard=false' \
+	pafable/cont-jenkins:v1
 ```
