@@ -26,3 +26,9 @@ make run
 ```
 make destroy
 ```
+
+## Deploying to a Kubernetes Cluster
+*Deploy*
+```
+k8s-deploy
+```

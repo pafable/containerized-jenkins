@@ -5,5 +5,5 @@ COPY jenkins.yaml /config/jenkins.yaml
 
 RUN jenkins-plugin-cli -f /usr/share/jenkins/ref/plugins.txt
 
-ENV CASC_JENKINS_CONFIG /config/jenkins.yaml
+ENV CASC_JENKINS_CONFIG /config/jenkins-config.yaml
 ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
