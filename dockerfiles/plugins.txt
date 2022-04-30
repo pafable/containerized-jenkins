@@ -38,7 +38,7 @@ jjwt-api:0.11.2-71.v2722b_b_06a_2a_f
 jquery3-api:3.6.0-3
 jsch:0.1.55.2
 junit:1.60
-kubernetes:1.31.3
+kubernetes:3580.v78271e5631dc
 ldap:2.9
 lockable-resources:2.14
 mailer:414.vcc4c33714601

@@ -1,27 +1,31 @@
+CONTAINER_NAME = <your container name>
+IMAGE_NAME = <your container image name>
+
+
 build:	
-		docker network create jenkins
-		docker volume create jenkins-controller
-		docker build -t pafable/cont-jenkins:v1 dockerfiles
+		docker network create ${CONTAINER_NAME}
+		docker volume create ${CONTAINER_NAME}-controller
+		docker build -t ${IMAGE_NAME} dockerfiles
 
 
 destroy:
-		-docker rm -f jenkins-controller
-		-docker rmi pafable/cont-jenkins:v1
-		-docker network rm jenkins
-		-docker volume rm jenkins-controller
+		-docker rm -f ${CONTAINER_NAME}-controller
+		-docker rmi ${IMAGE_NAME}
+		-docker network rm ${CONTAINER_NAME}
+		-docker volume rm ${CONTAINER_NAME}-controller
 		
 
 run:
 	docker run \
-		--name jenkins-controller \
-		--hostname jenkins-controller \
+		--name ${CONTAINER_NAME}-controller \
+		--hostname ${CONTAINER_NAME}-controller \
 		--detach \
-		--network jenkins \
+		--network ${CONTAINER_NAME} \
 		--publish 8080:8080 \
 		--publish 50000:50000 \
 		--volume jenkins-controller:/var/jenkins_home \
 		--restart always \
 		--env JENKINS_ADMIN=${jenkinsAdmin} \
 		--env JENKINS_ADMIN_PW=${jenkinsAdminPw} \
-		pafable/cont-jenkins:v1 
-	docker logs -f jenkins-controller
+		${IMAGE_NAME}
+	docker logs -f ${CONTAINER_NAME}-controller
