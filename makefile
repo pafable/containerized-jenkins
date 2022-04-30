@@ -28,10 +28,12 @@ run:
 
 
 k8s-deploy:
-	-kubectl create namespace jenkins
-	-kubectl -n jenkins apply -f k8s/
+	-docker build -t ${IMAGE_NAME} dockerfiles
+	-kubectl create namespace ${CONTAINER_NAME}
+	-kubectl -n ${CONTAINER_NAME} apply -f k8s/
 
 
 k8s-destroy:
-	-kubectl -n jenkins delete -f k8s/
-	-kubectl delete namespace jenkins
+	-kubectl -n ${CONTAINER_NAME} delete -f k8s/
+	-kubectl delete namespace ${CONTAINER_NAME}
+	-docker rmi ${IMAGE_NAME}

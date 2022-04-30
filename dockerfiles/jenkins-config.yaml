@@ -231,7 +231,7 @@ unclassified:
   pollSCM:
     pollingThreadCount: 10
   timestamper:
-    allPipelines: false
+    allPipelines: true
     elapsedTimeFormat: "'<b>'HH:mm:ss.S'</b> '"
     systemTimeFormat: "'<b>'HH:mm:ss'</b> '"
 tool:
