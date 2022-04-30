@@ -23,7 +23,7 @@ run:
 		--network ${CONTAINER_NAME} \
 		--publish 8080:8080 \
 		--publish 50000:50000 \
-		--volume jenkins-controller:/var/jenkins_home \
+		--volume ${CONTAINER_NAME}-controller:/var/jenkins_home \
 		--restart always \
 		--env JENKINS_ADMIN=${jenkinsAdmin} \
 		--env JENKINS_ADMIN_PW=${jenkinsAdminPw} \
