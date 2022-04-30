@@ -1,7 +1,7 @@
 FROM jenkins/jenkins:latest
 
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
-COPY jenkins.yaml /config/jenkins.yaml
+COPY jenkins-config.yaml /config/jenkins-config.yaml
 
 RUN jenkins-plugin-cli -f /usr/share/jenkins/ref/plugins.txt
 
