@@ -1,7 +1,3 @@
-CONTAINER_NAME = <your container name>
-IMAGE_NAME = <your container image name>
-
-
 build:	
 		docker network create ${CONTAINER_NAME}
 		docker volume create ${CONTAINER_NAME}-controller
@@ -29,3 +25,13 @@ run:
 		--env JENKINS_ADMIN_PW=${jenkinsAdminPw} \
 		${IMAGE_NAME}
 	docker logs -f ${CONTAINER_NAME}-controller
+
+
+k8s-deploy:
+	-kubectl create namespace jenkins
+	-kubectl -n jenkins apply -f k8s/
+
+
+k8s-destroy:
+	-kubectl -n jenkins delete -f k8s/
+	-kubectl delete namespace jenkins

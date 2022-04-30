@@ -8,8 +8,8 @@ The base container uses jenkins/jenkins:latest.
 1. Create 2 environment variables for the Jenkins admin user and password.
 - `jenkinsAdmin`
 - `jenkinsAdminPw`
-
-2. Edit Makefile and change `CONTAINER_NAME` and `IMAGE_NAME` to whatever you want.
+- `CONTAINER_NAME`
+- `IMAGE_NAME`
 
 ## Building and Deploying
 *Build*

@@ -21,12 +21,16 @@ spec:
     spec:
       serviceAccountName: jenkins
       containers:
-      - name: jenkins
-        image: jenkins/jenkins:latest
+      - name: jenkins-controller
+        image: pafable/cont-jenkins:v1
         imagePullPolicy: IfNotPresent
         env:
         - name: JAVA_OPTS
           value: -Xmx2048m -Dhudson.slaves.NodeProvisioner.MARGIN=50 -Dhudson.slaves.NodeProvisioner.MARGIN0=0.85
+        - name: JENKINS_ADMIN
+          value: <ADMIN USERNAME>
+        - name: JENKINS_ADMIN_PW
+          value: <ADMIN PASSWORD>
         ports:
         - containerPort: 8080
           protocol: TCP
