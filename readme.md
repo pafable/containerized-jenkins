@@ -30,5 +30,10 @@ make destroy
 ## Deploying to a Kubernetes Cluster
 *Deploy*
 ```
-k8s-deploy
+make k8s-deploy
+```
+
+*Destroy*
+```
+make k8s-destroy
 ```
