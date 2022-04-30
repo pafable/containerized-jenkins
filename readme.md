@@ -3,6 +3,11 @@
 ## Introduction
 The objective of this is to test the viability of running Jenkins in a container
 
+## Setup
+1. Create 2 environment variables for the Jenkins admin user and password.
+- jenkinsAdmin
+- jenkinsAdminPw
+
 ## Docker Commands
 *Build*
 ```

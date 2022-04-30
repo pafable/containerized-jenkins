@@ -62,8 +62,9 @@ jenkins:
       allowsSignup: false
       enableCaptcha: false
       users:
-      - id: "admin"
-        name: "admin"
+      - id: ${JENKINS_ADMIN}
+        name: ${JENKINS_ADMIN}
+        password: ${JENKINS_ADMIN_PW}
         properties:
         - "apiToken"
         - "myView"

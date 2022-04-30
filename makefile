@@ -5,10 +5,10 @@ build:
 
 
 destroy:
-		docker rm -f jenkins-controller
-		docker rmi pafable/cont-jenkins:v1
-		docker network rm jenkins
-		docker volume rm jenkins-controller
+		-docker rm -f jenkins-controller
+		-docker rmi pafable/cont-jenkins:v1
+		-docker network rm jenkins
+		-docker volume rm jenkins-controller
 		
 
 run:
@@ -21,6 +21,7 @@ run:
 		--publish 50000:50000 \
 		--volume jenkins-controller:/var/jenkins_home \
 		--restart always \
-		--env PLUGIN_DIR='/var/jenkins_home/plugins' \
-		--env JAVA_OPTS='-Djenkins.install.runSetupWizard=false -Djava.awt.headless=true' \
+		--env JENKINS_ADMIN=${jenkinsAdmin} \
+		--env JENKINS_ADMIN_PW=${jenkinsAdminPw} \
 		pafable/cont-jenkins:v1 
+	docker logs -f jenkins-controller
