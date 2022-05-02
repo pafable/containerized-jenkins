@@ -37,3 +37,6 @@ make k8s-deploy
 ```
 make k8s-destroy
 ```
+
+## TODO
+- Setup terraform to deploy k8s
