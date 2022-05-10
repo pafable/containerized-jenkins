@@ -6,8 +6,6 @@ The base container uses jenkins/jenkins:latest.
 
 ## Setup
 1. Create 2 environment variables for the Jenkins admin user and password.
-- `jenkinsAdmin`
-- `jenkinsAdminPw`
 - `CONTAINER_NAME`
 - `IMAGE_NAME`
 

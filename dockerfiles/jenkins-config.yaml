@@ -10,10 +10,10 @@ jenkins:
       containerCap: 10
       containerCapStr: "10"
       jenkinsTunnel: "jenkins:50000"
-      jenkinsUrl: "http://jenkins"
+      jenkinsUrl: "http://jenkins:8080"
       name: "kubernetes"
       namespace: "jenkins"
-      serverUrl: "https://kubernetes.default:443"
+      serverUrl: "https://kubernetes.default"
       templates:
       - containers:
         - image: "jenkins/inbound-agent"
