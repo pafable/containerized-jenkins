@@ -22,7 +22,7 @@ spec:
       serviceAccountName: jenkins
       containers:
       - name: jenkins-controller
-        image: pafable/cont-jenkins:0.0.1
+        image: pafable/cont-jenkins:0.0.2
         imagePullPolicy: IfNotPresent
         env:
         - name: JAVA_OPTS

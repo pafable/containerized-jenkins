@@ -30,6 +30,7 @@ jenkins:
         label: "jenkins-agent"
         name: "jenkins-agent"
         namespace: "jenkins"
+        nodeUsageMode: NORMAL
         podRetention: "never"
         slaveConnectTimeout: 300
         slaveConnectTimeoutStr: "300"
