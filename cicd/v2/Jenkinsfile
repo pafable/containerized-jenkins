@@ -1,0 +1,80 @@
+pipeline{
+    agent any
+
+    options {
+        buildDiscarder(
+            logRotator(
+                daysToKeepStr: '60'
+            )
+        )
+        disableConcurrentBuilds()
+        timeout(
+            time: 1,
+            unit: 'HOURS'
+        )
+    }
+
+    stages {
+        stage("Set Params") {
+            steps {
+                script {
+                    properties([
+                        parameters([
+                            string(
+                                defaultValue: 'https://google.com',
+                                name: 'URL'
+                            ),
+                            string(
+                                defaultValue: 'test-project-100',
+                                name: 'PROJECT_NAME'
+                            ),
+                            string(
+                                defaultValue: '0.0.1.a',
+                                name: 'VERSION'
+                            ),
+                            booleanParam(
+                                defaultValue: true,
+                                name: 'is_RUNNING'
+                            ),
+                            booleanParam(
+                                defaultValue: true,
+                                name: 'RETRY_ON_FAILURE'
+                            ),
+                            booleanParam(
+                                defaultValue: false,
+                                name: 'DESTROY'
+                            ),
+                            string(
+                                defaultValue: 'WARN',
+                                name: 'LOGGING_LEVEL'
+                            ),
+                            string(
+                                defaultValue: '2400',
+                                name: 'TIMEOUT'
+                            ),                             
+                        ])
+                    ])
+                }
+            }
+        }
+
+        stage("Check location") {
+            steps {
+                sh 'pwd'
+            }
+        }
+
+        stage("Check Items") {
+            steps {
+                sh 'ls -ahl'
+            }
+        }
+
+        stage("Building new version") {
+            steps {
+                echo "Building version: ${params.VERSION}"
+                echo "log level:  ${params.LOGGING_LEVEL}"
+            }
+        }
+    }
+}
