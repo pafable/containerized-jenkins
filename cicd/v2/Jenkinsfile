@@ -21,9 +21,10 @@ pipeline{
             steps {
                 helloWorld('dude')
                 howdy(name: 'partner', dayOfWeek: 'Tuesday')
+                checkPlease()
             }
         }
-        
+
         stage("Set Params") {
             steps {
                 script {
