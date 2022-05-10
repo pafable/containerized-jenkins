@@ -1,3 +1,5 @@
+@Library("shared-library") _
+
 pipeline{
     agent any
 
@@ -74,6 +76,13 @@ pipeline{
             steps {
                 echo "Building version: ${params.VERSION}"
                 echo "log level:  ${params.LOGGING_LEVEL}"
+            }
+        }
+
+        stage("Loading Shared Library") {
+            steps {
+                helloWorld('dude')
+                howdy(name: 'partner', dayOfWeek: 'Tuesday')
             }
         }
     }
