@@ -17,6 +17,13 @@ pipeline{
     }
 
     stages {
+        stage("Loading Shared Library") {
+            steps {
+                helloWorld('dude')
+                howdy(name: 'partner', dayOfWeek: 'Tuesday')
+            }
+        }
+        
         stage("Set Params") {
             steps {
                 script {
@@ -76,13 +83,6 @@ pipeline{
             steps {
                 echo "Building version: ${params.VERSION}"
                 echo "log level:  ${params.LOGGING_LEVEL}"
-            }
-        }
-
-        stage("Loading Shared Library") {
-            steps {
-                helloWorld('dude')
-                howdy(name: 'partner', dayOfWeek: 'Tuesday')
             }
         }
     }
