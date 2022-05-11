@@ -19,21 +19,17 @@ pipeline{
     }
 
     stages {
-
         stage('Set Params') {
-            steps {
-                script {
-                    userName = input(
-                        message: 'Who are you?',
-                        ok: 'Click',
-                        parameters:([
-                            string(
-                                name: "USERNAME"
-                            )
-                        ])
+            input(
+                message: 'Who are you?',
+                ok: 'ENTER',
+                parameters:([
+                    string(
+                        name: "USERNAME"
                     )
-                }
-
+                ])
+            )
+            steps {
                 sh "echo you are ${userName}!"
             }
         }
