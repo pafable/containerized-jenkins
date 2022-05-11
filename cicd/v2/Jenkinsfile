@@ -20,10 +20,9 @@ pipeline {
 
     stages {
         stage('Set Params') {
-            agent any
             input {
                 message "Who are you?"
-                ok: "ENTER"
+                ok "ENTER"
                 parameters {
                     string(
                         name: 'USERNAME'
