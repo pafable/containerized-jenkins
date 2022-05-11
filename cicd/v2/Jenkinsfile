@@ -4,6 +4,7 @@ pipeline {
     agent any
     environment {
         MY_TOKEN = credentials('my-token')
+        REL_TYPE = myInput()
     }
     options {
         buildDiscarder(
@@ -31,6 +32,7 @@ pipeline {
             }
             steps {
                 sh "echo you are ${userName}!"
+                sh "echo Release Type: ${REL_TYPE}"
             }
         }
 
