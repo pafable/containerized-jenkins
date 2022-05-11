@@ -30,18 +30,25 @@ pipeline {
             //     }
             // }
 
-            input {
-                message "Please select type of release"
-                ok "Build"
-                parameters {
-                    choice(
-                        name: 'RELEASE_OPTIONS', 
-                        choices: ['HOTFIX', 'PATCH', 'MINOR', 'MAJOR'], 
-                        description: 'select the release type'
-                    )
-                }
-            }
+            // input {
+            //     message "Please select type of release"
+            //     ok "Build"
+            //     parameters {
+            //         choice(
+            //             name: 'RELEASE_OPTIONS', 
+            //             choices: ['HOTFIX', 'PATCH', 'MINOR', 'MAJOR'], 
+            //             description: 'select the release type'
+            //         )
+            //     }
+            // }
 
+            def buildCoreImage = input(
+                message: 'Build Core Image?',
+                ok: 'Yes', 
+                parameters: [
+                    booleanParam(defaultValue: true, description: 'Push the button to build core image.',name: 'Yes?')
+                ]
+            )
             steps {
                 sh "echo you are ${RELEASE_OPTIONS}!"
             }
