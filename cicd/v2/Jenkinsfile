@@ -1,6 +1,6 @@
 @Library("shared-library") _
 
-pipeline{
+pipeline {
     agent any
     environment {
         MY_TOKEN = credentials('my-token')
@@ -20,6 +20,7 @@ pipeline{
 
     stages {
         stage('Set Params') {
+            agent any
             input {
                 message 'Who are you?'
                 ok: 'ENTER'
