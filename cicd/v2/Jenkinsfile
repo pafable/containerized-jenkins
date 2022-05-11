@@ -41,9 +41,8 @@ pipeline {
             //         )
             //     }
             // }
-            
+            myInput1()
             steps {
-                myInput1()
                 sh "echo you are ${RELEASE_OPTIONS}!"
             }
         }
