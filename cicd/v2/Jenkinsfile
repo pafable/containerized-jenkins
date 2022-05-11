@@ -32,18 +32,18 @@ pipeline {
 
             input {
                 message "Please select type of release"
-                ok "build"
+                ok "Build"
                 parameters {
                     choice(
                         name: 'RELEASE_OPTIONS', 
                         choices: ['HOTFIX', 'PATCH', 'MINOR', 'MAJOR'], 
-                        description: 'Release type'
+                        description: 'select the release type'
                     )
                 }
             }
             
             steps {
-                sh "echo you are ${userName}!"
+                sh "echo you are ${RELEASE_OPTIONS}!"
             }
         }
 
