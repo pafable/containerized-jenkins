@@ -42,14 +42,14 @@ pipeline {
             //     }
             // }
 
-            input(
-                message: 'Build Core Image?',
-                ok: 'Yes', 
-                parameters: [
-                    booleanParam(defaultValue: true, description: 'Push the button to build core image.',name: 'Yes?')
-                ]
-            )
             steps {
+                def buildCoreImage = input(
+                    message: 'Build Core Image?',
+                    ok: 'Yes', 
+                    parameters: [
+                        booleanParam(defaultValue: true, description: 'Push the button to build core image.',name: 'Yes?')
+                    ]
+                )
                 sh "echo you are ${RELEASE_OPTIONS}!"
             }
         }
