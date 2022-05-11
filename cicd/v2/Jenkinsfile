@@ -22,15 +22,17 @@ pipeline{
 
         stage('Set Params') {
             steps {
-                userName = input(
-                    message: 'Who are you?',
-                    ok: 'Click',
-                    parameters:([
-                        string(
-                            name: "USERNAME"
-                        )
-                    ])
-                )
+                script {
+                    userName = input(
+                        message: 'Who are you?',
+                        ok: 'Click',
+                        parameters:([
+                            string(
+                                name: "USERNAME"
+                            )
+                        ])
+                    )
+                }
             }
         }
 
