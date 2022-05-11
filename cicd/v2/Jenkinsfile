@@ -29,9 +29,9 @@ pipeline {
                     )
                 }
             }
+            myInput
             steps {
                 sh "echo you are ${userName}!"
-                myInput()
             }
         }
 
