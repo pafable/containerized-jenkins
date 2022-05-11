@@ -21,7 +21,7 @@ pipeline{
     stages {
         stage('Set Params') {
             input {
-                message: 'Who are you?'
+                message 'Who are you?'
                 ok: 'ENTER'
                 parameters {
                     string(
