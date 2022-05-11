@@ -22,11 +22,11 @@ pipeline {
         stage('Set Params') {
             agent any
             input {
-                message 'Who are you?'
-                ok: 'ENTER'
+                message "Who are you?"
+                ok: "ENTER"
                 parameters {
                     string(
-                        name: "USERNAME"
+                        name: 'USERNAME'
                     )
                 }
             }
