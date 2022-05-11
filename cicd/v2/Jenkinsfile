@@ -33,6 +33,8 @@ pipeline{
                         ])
                     )
                 }
+
+                sh "echo you are ${userName}!"
             }
         }
 
