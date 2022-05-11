@@ -30,6 +30,7 @@ pipeline{
 
         stage("Check location") {
             steps {
+                input(message: 'Do you wish to proceed?', ok: 'Proceed')
                 sh 'pwd'
             }
         }
