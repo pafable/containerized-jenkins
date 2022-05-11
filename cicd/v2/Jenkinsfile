@@ -17,6 +17,10 @@ pipeline{
     }
 
     stages {
+        environment {
+            MY_TOKEN = credentials('MY_TOKEN')
+        }
+        
         stage("Loading Shared Library") {
             steps {
                 helloWorld('dude')
