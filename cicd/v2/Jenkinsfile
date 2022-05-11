@@ -43,7 +43,7 @@ pipeline {
             // }
 
             steps {
-                def buildCoreImage = input(
+                input(
                     message: 'Build Core Image?',
                     ok: 'Yes', 
                     parameters: [
