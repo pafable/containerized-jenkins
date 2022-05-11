@@ -2,7 +2,9 @@
 
 pipeline{
     agent any
-
+    environment {
+        MY_TOKEN = credentials('MY_TOKEN')
+    }
     options {
         buildDiscarder(
             logRotator(
@@ -17,10 +19,7 @@ pipeline{
     }
 
     stages {
-        environment {
-            MY_TOKEN = credentials('MY_TOKEN')
-        }
-        
+
         stage("Loading Shared Library") {
             steps {
                 helloWorld('dude')
