@@ -30,20 +30,19 @@ pipeline {
             //     }
             // }
 
-            // input {
-            //     message "Please select type of release"
-            //     ok "Build"
-            //     parameters {
-            //         choice(
-            //             name: 'RELEASE_OPTIONS', 
-            //             choices: ['HOTFIX', 'PATCH', 'MINOR', 'MAJOR'], 
-            //             description: 'select the release type'
-            //         )
-            //     }
-            // }
+            input {
+                message "Please select type of release"
+                ok "Build"
+                parameters {
+                    choice(
+                        name: 'RELEASE_OPTIONS', 
+                        choices: ['HOTFIX', 'PATCH', 'MINOR', 'MAJOR'], 
+                        description: 'select the release type'
+                    )
+                }
+            }
 
             steps {
-                myInputZ()
                 sh "echo you are a test!"
             }
         }
