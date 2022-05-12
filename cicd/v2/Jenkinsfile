@@ -43,14 +43,14 @@ pipeline {
             // }
 
             steps {
-                def myInputZ = input(
+                input(
                     message: 'Build Core Image?',
                     ok: 'Yes', 
                     parameters: [
-                        booleanParam(defaultValue: true, description: 'Push the button to build core image.',name: 'Yes?')
+                        booleanParam(defaultValue: true, description: 'Push the button to build core image.',name: 'Yes')
                     ]
                 )
-                sh "echo you are ${myInputZ}!"
+                sh "echo you are ${Yes}!"
             }
         }
 
