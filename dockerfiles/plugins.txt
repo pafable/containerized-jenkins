@@ -39,6 +39,7 @@ jquery3-api:latest
 jsch:latest
 junit:latest
 kubernetes:latest
+kubernetes-credentials-provider:latest
 ldap:latest
 lockable-resources:latest
 mailer:latest
