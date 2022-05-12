@@ -50,7 +50,7 @@ pipeline {
                         booleanParam(defaultValue: true, description: 'Push the button to build core image.',name: 'Yes')
                     ]
                 )
-                sh "echo you are ${Yes}!"
+                // sh "echo you are ${Yes}!"
             }
         }
 
