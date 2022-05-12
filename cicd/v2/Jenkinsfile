@@ -43,7 +43,7 @@ pipeline {
             // }
 
             steps {
-                myInputZ{}
+                myInputZ()
                 sh "echo you are a test!"
             }
         }
