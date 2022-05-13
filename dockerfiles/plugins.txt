@@ -35,6 +35,7 @@ javax-mail-api:latest
 jaxb:latest
 jdk-tool:latest
 jjwt-api:latest
+job-dsl:latest
 jquery3-api:latest
 jsch:latest
 junit:latest
