@@ -1,9 +1,3 @@
-job('my deploy') {
-    steps {
-        shell('deploying now...')
-    }
-}
-
 pipelineJob('github-demo') {
     definition {
         cpsScm {
