@@ -8,7 +8,7 @@ pipelineJob('github-demo') {
                     }
                 }
             }
-            scriptPath('job-dsl/deploy.groovy')
+            scriptPath('cicd/v2/Jenkinsfile')
         }
     }
 }
