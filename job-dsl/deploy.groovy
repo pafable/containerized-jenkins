@@ -4,7 +4,7 @@ pipelineJob('github-demo') {
             scm {
                 git {
                     remote {
-                        github('pafablr/containerized-jenkins')
+                        github('pafable/containerized-jenkins')
                     }
                 }
             }
