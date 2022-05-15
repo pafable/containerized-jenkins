@@ -30,7 +30,7 @@ jenkins:
         label: "jenkins-agent"
         name: "jenkins-agent"
         namespace: "jenkins"
-        nodeUsageMode: NORMAL
+        nodeUsageMode: "NORMAL"
         podRetention: "never"
         slaveConnectTimeout: 300
         slaveConnectTimeoutStr: "300"
@@ -64,9 +64,8 @@ jenkins:
       allowsSignup: false
       enableCaptcha: false
       users:
-      - id: ${JENKINS_ADMIN}
-        name: ${JENKINS_ADMIN}
-        password: ${JENKINS_ADMIN_PW}
+      - id: "admin"
+        name: "admin"
         properties:
         - "apiToken"
         - "myView"
@@ -78,7 +77,7 @@ jenkins:
         - preferredProvider:
             providerId: "default"
   slaveAgentPort: 50000
-  systemMessage: |+
+  systemMessage: |
     Configured by Phil :)
   updateCenter:
     sites:
@@ -97,11 +96,17 @@ security:
     creationOfLegacyTokenEnabled: false
     tokenGenerationOnCreationEnabled: false
     usageStatisticsEnabled: true
+  globalJobDslSecurityConfiguration:
+    useScriptSecurity: true
   sSHD:
     port: -1
   scriptApproval:
     approvedScriptHashes:
     - "017d0db438428731cd600b6ebda805065433520f"
+    - "66cb3c44d1bf6ee25cf8971405dc888294a4b9df"
+    - "8a0066be736c8e45605e2872013d5d1a1f03e955"
+    - "bc326741f18df437bc86c853f2d0e81d48693924"
+    - "f575eec239ce35dd09578664925495441f1d59e4"
 unclassified:
   ansiColorBuildWrapper:
     colorMaps:
