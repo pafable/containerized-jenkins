@@ -43,3 +43,4 @@ make k8s-destroy
 ## TODO
 - Setup terraform to deploy k8s
 - Deploy to Digital Ocean
+- Add secrets mgmt
