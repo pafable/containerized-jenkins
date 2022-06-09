@@ -10,6 +10,8 @@ For local testing install docker desktop and enable kubernetes.
 1. Create 2 environment variables for the Jenkins admin user and password.
 - `CONTAINER_NAME`
 - `IMAGE_NAME`
+- `JENKINS_ADMIN`
+- `JENKINS_ADMIN_PW`
 
 In the `k8s` folder edit line 25 (image: pafable/cont-jenkins:0.0.2) and replace the image with your own name.
 

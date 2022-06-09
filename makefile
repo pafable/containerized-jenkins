@@ -30,7 +30,11 @@ run:
 k8s-deploy:
 	-docker build -t ${IMAGE_NAME} dockerfiles
 	-kubectl create namespace ${CONTAINER_NAME}
-	-kubectl -n ${CONTAINER_NAME} apply -f k8s/
+	-envsubst < k8s/jenkins.deployment.yaml | kubectl -n ${CONTAINER_NAME} apply -f -
+	-envsubst < k8s/jenkins.pv.yaml | kubectl -n ${CONTAINER_NAME} apply -f -
+	-envsubst < k8s/jenkins.pvc.yaml | kubectl -n ${CONTAINER_NAME} apply -f -
+	-envsubst < k8s/jenkins.rbac.yaml | kubectl -n ${CONTAINER_NAME} apply -f -
+	-envsubst < k8s/jenkins.service.yaml | kubectl -n ${CONTAINER_NAME} apply -f -
 
 
 k8s-destroy:
