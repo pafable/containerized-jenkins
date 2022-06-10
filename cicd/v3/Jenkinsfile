@@ -25,7 +25,7 @@ pipeline {
 
     stages {
         stage('Set Params') {
-            String xVar = input {
+            def userInput = input {
                 message "Please select type of release"
                 ok "Build"
                 parameters {
@@ -39,7 +39,7 @@ pipeline {
 
             steps {
                 sh "echo you are a test!"
-                sh "echo Release: ${xVar}"
+                sh "echo Release: ${userInput}"
                 sh "echo Some option: ${params.SOME_OPTION}"
             }
         }
