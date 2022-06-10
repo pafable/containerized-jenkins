@@ -38,9 +38,13 @@ pipeline {
             }
 
             steps {
-                sh "echo you are a test!"
-                sh "echo Release: ${userInput}"
-                sh "echo Some option: ${params.SOME_OPTION}"
+                script {
+                    sh """
+                        echo you are a test!
+                        echo Release: ${userInput}
+                        echo Some option: ${params.SOME_OPTION}
+                    """
+                }
             }
         }
 
