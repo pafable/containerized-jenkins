@@ -27,7 +27,7 @@ pipeline {
         stage('Set Params') {
             steps {
                 script {
-                    def userInput = input {
+                    input {
                         message "Please select type of release"
                         ok "Build"
                         parameters {
