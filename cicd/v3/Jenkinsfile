@@ -39,8 +39,8 @@ pipeline {
 
             steps {
                 sh "echo you are a test!"
-                sh "${params.RELEASE_OPTIONS}"
-                sh "${params.SOME_OPTION}"
+                sh "Release: ${params.RELEASE_OPTIONS}"
+                sh "Some option: ${params.SOME_OPTION}"
             }
         }
 
