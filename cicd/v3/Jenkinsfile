@@ -3,7 +3,13 @@ _
 
 pipeline {
     agent any
-
+    parameters {
+        choice(
+            name: 'RELEASE_OPTIONS',
+            choices: ['HOTFIX', 'PATCH', 'MINOR', 'MAJOR'],
+            description: 'select the release type'
+        )
+    }
     options {
         buildDiscarder(
             logRotator(
