@@ -33,7 +33,7 @@ pipeline {
 
             steps {
                 sh "echo you are a test!"
-                println ${params.RELEASE_OPTIONS}
+                println params.RELEASE_OPTIONS
             }
         }
 
