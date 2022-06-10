@@ -1,0 +1,68 @@
+@Library("shared-library")
+_
+
+pipeline {
+    agent any
+
+    options {
+        buildDiscarder(
+            logRotator(
+                daysToKeepStr: '60'
+            )
+        )
+        disableConcurrentBuilds()
+        timeout(
+            time: 1,
+            unit: 'HOURS'
+        )
+    }
+
+    stages {
+        stage('Set Params') {
+            input {
+                message "Please select type of release"
+                ok "Build"
+                parameters {
+                    choice(
+                        name: 'RELEASE_OPTIONS',
+                        choices: ['HOTFIX', 'PATCH', 'MINOR', 'MAJOR'],
+                        description: 'select the release type'
+                    )
+                }
+            }
+
+            steps {
+                sh "echo you are a test!"
+            }
+        }
+
+        stage("Loading Shared Library") {
+            steps {
+                helloWorld('dude')
+                howdy(name: 'partner', dayOfWeek: 'Tuesday')
+                checkPlease()
+            }
+        }
+
+        stage("Check location") {
+            steps {
+                input(message: 'Do you wish to proceed?', ok: 'Proceed')
+                sh 'pwd'
+            }
+        }
+
+        stage("Check Items") {
+            steps {
+                sh 'ls -ahl'
+                deez()
+            }
+        }
+
+        stage("Building new version") {
+            steps {
+                echo "Building version: \${params.VERSION}"
+                echo "log level:  \${params.LOGGING_LEVEL}"
+            }
+        }
+    }
+}
