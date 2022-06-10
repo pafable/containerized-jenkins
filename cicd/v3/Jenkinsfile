@@ -5,7 +5,7 @@ pipeline {
     agent any
     parameters {
         choice(
-            name: 'RELEASE_OPTIONS',
+            name: 'SOME_OPTION',
             choices: ['HOTFIX', 'PATCH', 'MINOR', 'MAJOR'],
             description: 'select the release type'
         )
@@ -39,7 +39,8 @@ pipeline {
 
             steps {
                 sh "echo you are a test!"
-                echo "${params.RELEASE_OPTIONS}"
+                sh "${params.RELEASE_OPTIONS}"
+                sh "${params.SOME_OPTION}"
             }
         }
 
