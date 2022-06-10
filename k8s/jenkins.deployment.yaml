@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jenkins
+  name: jenkins-controller
   labels:
     app: jenkins
 spec:
@@ -22,15 +22,15 @@ spec:
       serviceAccountName: jenkins
       containers:
       - name: jenkins-controller
-        image: pafable/cont-jenkins:0.0.2
+        image: ${IMAGE_NAME}
         imagePullPolicy: IfNotPresent
         env:
         - name: JAVA_OPTS
-          value: -Xmx2048m -Dhudson.slaves.NodeProvisioner.MARGIN=50 -Dhudson.slaves.NodeProvisioner.MARGIN0=0.85
+          value: -Xmx2048m -Dhudson.slaves.NodeProvisioner.MARGIN=50 -Dhudson.slaves.NodeProvisioner.MARGIN0=0.85 -Djenkins.install.runSetupWizard=false
         - name: JENKINS_ADMIN
-          value: admin
+          value: ${JENKINS_ADMIN}
         - name: JENKINS_ADMIN_PW
-          value: admin
+          value: ${JENKINS_ADMIN_PW}
         ports:
         - containerPort: 8080
           protocol: TCP
