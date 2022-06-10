@@ -53,8 +53,8 @@ pipeline {
 
         stage("Building new version") {
             steps {
-                echo "Building version: \${params.VERSION}"
-                echo "log level:  \${params.LOGGING_LEVEL}"
+                echo "Building version: ${params.VERSION}"
+                echo "log level:  ${params.LOGGING_LEVEL}"
             }
         }
     }
