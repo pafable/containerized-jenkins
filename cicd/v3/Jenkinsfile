@@ -25,20 +25,20 @@ pipeline {
 
     stages {
         stage('Set Params') {
-            def userInput = input {
-                message "Please select type of release"
-                ok "Build"
-                parameters {
-                    choice(
-                        name: 'RELEASE_OPTIONS',
-                        choices: ['HOTFIX', 'PATCH', 'MINOR', 'MAJOR'],
-                        description: 'select the release type'
-                    )
-                }
-            }
-
             steps {
                 script {
+                    def userInput = input {
+                        message "Please select type of release"
+                        ok "Build"
+                        parameters {
+                            choice(
+                                name: 'RELEASE_OPTIONS',
+                                choices: ['HOTFIX', 'PATCH', 'MINOR', 'MAJOR'],
+                                description: 'select the release type'
+                            )
+                        }
+                    }
+
                     sh """
                         echo you are a test!
                         echo Release: ${userInput}
