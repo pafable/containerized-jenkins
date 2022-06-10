@@ -7,7 +7,7 @@ The base container uses jenkins/jenkins:latest.
 For local testing install docker desktop and enable kubernetes.
 
 ## Setup
-1. Create 2 environment variables for the Jenkins admin user and password.
+1. Create 4 environment variables for the Jenkins admin user and password.
 - `CONTAINER_NAME`
 - `IMAGE_NAME`
 - `JENKINS_ADMIN`
