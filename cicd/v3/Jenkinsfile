@@ -47,7 +47,7 @@ pipeline {
         stage("Check Items") {
             steps {
                 sh 'ls -ahl'
-                deez()
+                println deez()
             }
         }
 
