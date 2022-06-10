@@ -31,7 +31,6 @@ pipeline {
                     echo Release: ${userInput}
                     echo Some option: ${params.SOME_OPTION}
                 """
-                }
             }
         }
 
