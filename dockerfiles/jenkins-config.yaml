@@ -235,7 +235,7 @@ unclassified:
           scm:
             git:
               id: "9dfa4ed3-a967-4e4d-84a0-feb889b8c141"
-              remote: "https://github.com/pafable/jenkins-shared-lib.git"
+              remote: "https://github.com/pafable/jenkins-shared-library.git"
   junitTestResultStorage:
     storage: "file"
   location:
