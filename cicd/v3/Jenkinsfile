@@ -30,10 +30,10 @@ pipeline {
                     )
                 }
             }
-            println params.RELEASE_OPTIONS
+
             steps {
                 sh "echo you are a test!"
-                println params.RELEASE_OPTIONS
+                echo "${params.RELEASE_OPTIONS}"
             }
         }
 
