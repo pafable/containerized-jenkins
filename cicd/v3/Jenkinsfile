@@ -36,14 +36,6 @@ pipeline {
             }
         }
 
-        stage("Loading Shared Library") {
-            steps {
-                helloWorld('dude')
-                howdy(name: 'partner', dayOfWeek: 'Tuesday')
-                checkPlease()
-            }
-        }
-
         stage("Check location") {
             steps {
                 input(message: 'Do you wish to proceed?', ok: 'Proceed')
